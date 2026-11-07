@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Bank Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="theme-toggle-btn">🌓 Toggle Theme</button>
+
+    <section id="signup-page" style="display: block;">
+        <h2>Create Account</h2>
+        <form id="signup-form">
+            <div>
+                <label>Full Name</label>
+                <input type="text" id="signup-name" required>
+            </div>
+            <div>
+                <label>Username</label>
+                <input type="text" id="signup-username" required>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" id="signup-email" required>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" id="signup-password" required>
+            </div>
+            <div>
+                <label>Confirm Password</label>
+                <input type="password" id="signup-confirm-password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <section id="login-page" style="display: none;">
+        <h2>Login to Mini Bank</h2>
+        <form id="login-form">
+            <div>
+                <label>Email or Username</label>
+                <input type="text" id="login-email" required>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" id="login-password" required>
+            </div>
+            <button type="submit">Log In</button>
+        </form>
+    </section>
+
+    <section id="dashboard" style="display: none;">
+        <h2>Welcome, <span id="display-name">---</span></h2>
+        <p>Email: <span id="display-email">---</span></p>
+        <p>Account ID: <span id="display-account-id">---</span></p>
+        
+        <div>
+            <label>Currency: </label>
+            <select id="currency-selector">
+                <option value="INR">INR (₹)</option>
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+            </select>
+        </div>
+        
+        <h3>Current Balance: <span id="display-balance">₹0.00</span></h3>
+
+        <div>
+            <h4>Deposit</h4>
+            <input type="number" id="deposit-amount" placeholder="Amount in ₹">
+            <button id="deposit-btn">Deposit</button>
+        </div>
+
+        <div>
+            <h4>Withdraw</h4>
+            <input type="number" id="withdraw-amount" placeholder="Amount in ₹">
+            <button id="withdraw-btn">Withdraw</button>
+        </div>
+
+        <div>
+            <p>Total Deposited: <span id="summary-total-deposited">₹0.00</span></p>
+            <p>Total Withdrawn: <span id="summary-total-withdrawn">₹0.00</span></p>
+            <p>Current Balance: <span id="summary-current-balance">₹0.00</span></p>
+        </div>
+
+        <h3>Transaction History</h3>
+        <ul id="transactions-list">
+            <li>No transactions yet.</li>
+        </ul>
+
+        <button id="close-account-btn">Log Out</button>
+    </section>
+
+    <script src="js/ui.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/transaction.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
